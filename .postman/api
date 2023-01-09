@@ -6,6 +6,18 @@ id = 388dc879-e023-40ae-96f1-2b1059090dfc
 [relations.collections]
 rootDirectory = postman/collections
 files[] = {"id":"23721371-011e7a11-edaa-4497-9bbe-e34a1fc575f8","path":"Day 00: Pre-requisites.json","metaData":{}}
+files[] = {"id":"23721371-7751422d-59bc-459b-98ec-3f065628bfdb","path":"Day 01: Fork a collection.json","metaData":{}}
+files[] = {"id":"23721371-ce3336e1-75ed-4de7-9515-c542d1526419","path":"Day 02: Collections and environments.json","metaData":{}}
+files[] = {"id":"23721371-0eb9d6c4-5e05-4a00-b2f7-daa43b0c14ae","path":"Day 03: Add request details.json","metaData":{}}
+files[] = {"id":"23721371-ec72972a-3c6a-473a-aadb-a8c23c02a9de","path":"Day 04: Authorization.json","metaData":{}}
+files[] = {"id":"23721371-fa030545-25c9-4442-9307-f0ff5d17961c","path":"Day 05: Variables.json","metaData":{}}
+files[] = {"id":"23721371-d9eb0b7d-9646-4f74-b81d-9e2a74f9564b","path":"Day 06: Tests.json","metaData":{}}
+files[] = {"id":"23721371-3b16bbe1-e9ad-4482-aa1d-fad4ae7647b4","path":"Day 07: Debugging.json","metaData":{}}
+files[] = {"id":"23721371-d21386dc-1197-4d98-b9fd-304e245b2ebb","path":"Day 08: Run a collection.json","metaData":{}}
+files[] = {"id":"23721371-62ec7940-67f3-4dbe-9fd4-9c182b78fbf0","path":"Day 09: Scripting.json","metaData":{}}
+files[] = {"id":"23721371-dbf0a1d9-6454-4697-80bd-78221e394d55","path":"Day 10: Mock services.json","metaData":{}}
+files[] = {"id":"23721371-4acd399a-28ea-4faa-af18-ca091d57dd2f","path":"Day 11: Monitoring.json","metaData":{}}
+files[] = {"id":"23721371-59be6801-4e53-4272-b427-6c017a6482a9","path":"Day 12: Postman API.json","metaData":{}}
 
 [relations.collections.metaData]
 
