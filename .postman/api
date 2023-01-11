@@ -18,6 +18,7 @@ files[] = {"id":"23721371-62ec7940-67f3-4dbe-9fd4-9c182b78fbf0","path":"Day 09: 
 files[] = {"id":"23721371-dbf0a1d9-6454-4697-80bd-78221e394d55","path":"Day 10: Mock services.json","metaData":{}}
 files[] = {"id":"23721371-4acd399a-28ea-4faa-af18-ca091d57dd2f","path":"Day 11: Monitoring.json","metaData":{}}
 files[] = {"id":"23721371-59be6801-4e53-4272-b427-6c017a6482a9","path":"Day 12: Postman API.json","metaData":{}}
+files[] = {"id":"23721371-07621953-f021-4526-bb71-5fb5deb0f203","path":"Day 13: Newman.json","metaData":{}}
 
 [relations.collections.metaData]
 
