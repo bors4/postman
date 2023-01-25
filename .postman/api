@@ -19,6 +19,18 @@ files[] = {"id":"23721371-dbf0a1d9-6454-4697-80bd-78221e394d55","path":"Day 10: 
 files[] = {"id":"23721371-4acd399a-28ea-4faa-af18-ca091d57dd2f","path":"Day 11: Monitoring.json","metaData":{}}
 files[] = {"id":"23721371-59be6801-4e53-4272-b427-6c017a6482a9","path":"Day 12: Postman API.json","metaData":{}}
 files[] = {"id":"23721371-07621953-f021-4526-bb71-5fb5deb0f203","path":"Day 13: Newman.json","metaData":{}}
+files[] = {"id":"23721371-30e134aa-13c5-40a4-bb15-83e760851b4b","path":"Day 14: OAuth.json","metaData":{}}
+files[] = {"id":"23721371-1edf3d50-c339-49f7-a25b-518213bf13f8","path":"Day 15: Write to file.json","metaData":{}}
+files[] = {"id":"23721371-864b5aa7-d6cb-463b-a07b-ade0dfbd7308","path":"Day 16: Pagination.json","metaData":{}}
+files[] = {"id":"23721371-85d9781f-a913-4c6d-8478-95918a0c78e1","path":"Day 17: Visualizations.json","metaData":{}}
+files[] = {"id":"23721371-8db55d28-91e7-4258-9a39-bec918d04faf","path":"Day 18: API specifications.json","metaData":{}}
+files[] = {"id":"23721371-fe22e55e-81df-4153-9f43-5a8cb97db7a6","path":"Day 19: GraphQL.json","metaData":{}}
+files[] = {"id":"23721371-51ab1bdf-aa80-40fb-a63f-99152a48e594","path":"Day 20: Documentation.json","metaData":{}}
+files[] = {"id":"23721371-65e7c65e-c018-4d7e-9b52-9a44e35e36b3","path":"Day 21: WebSockets.json","metaData":{}}
+files[] = {"id":"23721371-86c6ecf1-a193-4528-80a6-5a70e35910ed","path":"Day 22: Public profile.json","metaData":{}}
+files[] = {"id":"23721371-c816e149-6d21-417b-b239-aa04b9ff6a2a","path":"Day 23: Data files.json","metaData":{}}
+files[] = {"id":"23721371-5d9d58e2-caa0-4041-9761-1d519619b9fa","path":"Day 24: Using libraries.json","metaData":{}}
+files[] = {"id":"23721371-f8566e04-3d13-4ecd-ac97-f4a2d4e69845","path":"Day 25: Dynamic request bodies.json","metaData":{}}
 
 [relations.collections.metaData]
 
