@@ -31,6 +31,7 @@ files[] = {"id":"23721371-86c6ecf1-a193-4528-80a6-5a70e35910ed","path":"Day 22: 
 files[] = {"id":"23721371-c816e149-6d21-417b-b239-aa04b9ff6a2a","path":"Day 23: Data files.json","metaData":{}}
 files[] = {"id":"23721371-5d9d58e2-caa0-4041-9761-1d519619b9fa","path":"Day 24: Using libraries.json","metaData":{}}
 files[] = {"id":"23721371-f8566e04-3d13-4ecd-ac97-f4a2d4e69845","path":"Day 25: Dynamic request bodies.json","metaData":{}}
+files[] = {"id":"23721371-7cf0a08d-8731-491c-aec1-e5fdcf131eb7","path":"Day 26: Parse HTML response.json","metaData":{}}
 
 [relations.collections.metaData]
 
