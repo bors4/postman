@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "822e1de3-2df6-4de2-9666-2e7dcc633047",
+		"name": "Day 27: Scenario testing",
+		"description": "## Instructions for Day 27: Scenario testing\n\n1.  **Get the challenge:** Fork [the parent collection `Day 27: Scenario testing`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392) from the main workspace to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n*   [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n*   [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n    \n\n## Additional resources\n\n*   [How to break an API](https://youtu.be/c-5UMf6sWk4) livestream\n*   [How Secure are your APIs?](https://youtu.be/shT-Obfo-uk) livestream\n*   [Acing your API tests — what you need to know for test automation](https://medium.com/better-practices/acing-your-apis-what-you-need-to-know-for-test-automation-e3fdba3519b9) blog\n*   [Scenario testing](https://www.tiktok.com/@joycejetson/video/7076059976770276650) tiktok\n    \n\n## Next challenge\n\n*   [UI testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-01eeea90-778a-4d8f-82b6-87e16ca7d45e)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23721371-822e1de3-2df6-4de2-9666-2e7dcc633047"
+	},
+	"item": [
+		{
+			"name": "Scenario testing",
+			"item": [
+				{
+					"name": "Setup",
+					"item": [
+						{
+							"name": "Creat user",
+							"id": "f07b41db-5845-467e-861b-cd61005e2d5b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"bbbgs\",\r\n  \"password\": \"Pbvf2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "c847713f-4209-4fac-8493-a17e9ec09de4"
+				},
+				{
+					"name": "New user workflow",
+					"item": [
+						{
+							"name": "User Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5003fc2f-0346-41f3-ae75-8226d9f17521",
+										"exec": [
+											"let responseJson = pm.response.json()\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\tpm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"I'm in!\", () => {\r",
+											"\tpm.expect(responseJson.status).to.eql(\"OK\")\r",
+											"\tpm.expect(responseJson.response.username).to.eql(\"bbbgs\")\r",
+											"\tpm.expect(responseJson.response.session_token).to.not.be.null\r",
+											"\t\r",
+											"})\r",
+											"pm.collectionVariables.set(\"user_id\", responseJson.response.user_id)\r",
+											"pm.collectionVariables.set(\"session_token\", responseJson.response.session_token)\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "2b7ee2b7-9417-4295-b1b6-6f144c27df03",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"username\": \"bbbgs\",\r\n  \"password\": \"Pbvf2023\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User Information",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fbfccca1-372e-4017-afb2-8367b37052e6",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\tpm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "0003eda9-1914-4dd8-84f5-fce89b5f6ae9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{session_token}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "X-API-Key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Account summary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cf4e3663-6196-4855-b18d-71ca70b9c899",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\tpm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ffd25624-6d85-4fd5-bf80-8e94d70951f1",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "17d6886d-1708-4f2e-a510-63fbdb10e84d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{session_token}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "X-API-Key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/:user_id/summary",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										":user_id",
+										"summary"
+									],
+									"variable": [
+										{
+											"key": "user_id",
+											"value": "{{user_id}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Logout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9dacfbc1-df31-44c4-b3f5-ec7f354e2f31",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\tpm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "22fad2cf-1ce3-42ae-8372-f327bf056d75",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{session_token}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "X-API-Key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/logout",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Account summary",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb85d3c7-2819-47af-84aa-be753ec6cd04",
+										"exec": [
+											"pm.test(\"User unauthenticated! Status code is 403\", function () {\r",
+											"\tpm.response.to.have.status(403);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "fc16047f-b842-40c1-9b8b-a059ef745344",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{session_token}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "X-API-Key",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/account/{{user_id}}/summary",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"account",
+										"{{user_id}}",
+										"summary"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "dc4ee6bc-a9e4-4244-bcb6-f27d1329f255",
+					"auth": {
+						"type": "apikey",
+						"apikey": [
+							{
+								"key": "key",
+								"value": "X-API-Key",
+								"type": "string"
+							},
+							{
+								"key": "value",
+								"value": "{{session_token}}",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6b4d7d04-a722-4089-aa2a-496773d0a244",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f70fc5c8-09bb-4760-ac58-22e6231522e9",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"id": "2e230653-3c41-4b02-a4c1-da14a31a9332",
+			"description": "It's time to work on your next challenge.\n\n1.  **Create API and collection**: Import [this API specification](https://github.com/kmmanoj96/vulnerable-apis/blob/main/openAPISpecBank.yaml), and generate a collection from the specification. You can do this using any method you prefer.Once this step is completed, make sure you have an API and associated collection, both called `Good Bank API`.\n2.  **Add folders**: Add two new folders called `Setup` and `New user workflow` nested under the `Scenario testing` folder.\n3.  **Add URL**: Find the `baseUrl` used in the `Good Bank API` collection, and add it as a collection variable called `baseUrl` to the `Day 27: Scenario testing` collection.\n4.  **Set up a new user**: Find the following request in the `Good Bank API` collection, and duplicate it over to the `Setup` folder.\n    \n    *   `POST` Create User\n    \n    Under the **Body** tab, update the username and password of your new user. Make a note of this information using any method you prefer. Hit **Send** to create a new user. The response will contain a `user_id`. Create a collection variable called `user_id` with this information, using any method you prefer.\n5.  **Add a scenario**: Find the following requests in the `Good Bank API` collection, and duplicate them over to the `New user workflow` folder.\n    \n    *   `POST` User Login\n    *   `GET` Get User Information (create this endpoint based on what you have learned about REST)\n    *   `GET` Account summary\n    *   `GET` User Logout\n    *   `GET` Account summary\n    \n    Find the `User Login` request, and update the request body with the `username` and `password` of the new user you created in the previous step. Add a Postman test to verify a successful response (you may need to send the request first). Then, add some code under the **Tests** tab to set two collection variables (`user_id` to store the logged in user's id and `token` to store the session token for the logged in user). Send the request again to verify the variables are set correctly.\n6.  **Add authorization**: Set an `API Key` authorization type for the folder `New user workflow` using the new `token` variable. This particular API requires that a token be submitted as a request header called `x-api-key`. Each request within the `New user workflow` folder should inherit authorization from the folder.\n7.  **Continue the scenario**: Add a test to each request within the `New user workflow` to verify a successful response.\n    *   `GET` Get User Information\n    *   `GET` Account summary - Update the path parameter to utilize your new `user_id` variable.\n    *   `GET` User Logout\n    *   `GET` Account summary - Update your test of a successful response to verify a `403` HTTP status code, since after the user logs out, they should not be able to access their account summary.\n8.  **Run the folder**: Use the runner to execute all the requests in the folder `New user workflow`. Make sure all your tests pass, and save your changes.\n    \n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c4bf261c-26fc-451f-acbc-f025dca1c1b3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "19e829a8-2165-46ff-b200-b9fa6a788b28",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Submit your solution",
+			"item": [
+				{
+					"name": "submit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e97b9c1-e6cf-4b1e-bf52-a0fdf0c7b8b0",
+								"exec": [
+									"// counter for passed tests\r",
+									"let pass = 0\r",
+									"let totalToPass = 7\r",
+									"\r",
+									"let collection = pm.response.json().collection\r",
+									"\r",
+									"pm.test(\"If you have any failures, review the failed test results or ask for support in the community forum. Remember to save your changes if you update the collection. When all of your tests pass, you are done with today's challenge.\", () => {\r",
+									"    pm.expect(true);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pass += 1\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct collection returned\", () => {\r",
+									"    pm.expect(collection.info.name).equals(\"Day 27: Scenario testing\")\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"let scenarioFolder = collection.item.find(fol => { return fol.name === \"Scenario testing\"})\r",
+									"\r",
+									"pm.test(\"Folders added correctly\", () => {\r",
+									"    pm.expect(collection.item.length, 'check number of folders').equals(2)\r",
+									"\r",
+									"    let setupFolder = scenarioFolder.item.find(fol => { return fol.name === \"Setup\"})\r",
+									"    pm.expect(setupFolder.item.length, 'check requests in first folder').equals(1)\r",
+									"\r",
+									"    let newFlowFolder = scenarioFolder.item.find(fol => { return fol.name === \"New user workflow\" })\r",
+									"    pm.expect(newFlowFolder.item.length, 'check requests in second folder').equals(5)\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Authorization added correctly\", () => {\r",
+									"    let newFlowFolder = scenarioFolder.item.find(fol => { return fol.name === \"New user workflow\" })\r",
+									"    pm.expect(newFlowFolder.auth.type).equals(\"apikey\")\r",
+									"    pm.expect(newFlowFolder.auth.apikey[1].value).equals(\"{{session_token}}\")\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Variables added correctly\", () => {\r",
+									"\r",
+									"    let baseVar = collection.variable.find(variable => { return variable.key === 'baseUrl'})\r",
+									"    pm.expect(baseVar.key, 'check base URL variable set').to.equal('baseUrl')\r",
+									"    pm.expect(baseVar.value, 'check base URL').to.equal('http://security.postman-breakable.com')\r",
+									"\r",
+									"    let tokenVar = collection.variable.find(variable => { return variable.key === 'token'})\r",
+									"    pm.expect(tokenVar.key, 'check token variable set').to.equal('token')\r",
+									"\r",
+									"    let idVar = collection.variable.find(variable => { return variable.key === 'user_id'})\r",
+									"    pm.expect(idVar.key, 'check id variable set').to.equal('user_id')\r",
+									"    \r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Tests added correctly\", () => {\r",
+									"    let scenarioFolder = collection.item.find(fol => { return fol.name === \"Scenario testing\"})\r",
+									"    let newFlowFolder = scenarioFolder.item.find(fol => { return fol.name === \"New user workflow\" })\r",
+									"\r",
+									"    let firstRequest = newFlowFolder.item.find(req => { return req.name === \"User Login\" | req.name === \"User Login Copy\"})\r",
+									"    let firstTest = firstRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(firstTest.script.exec.toString(), 'check first test').to.include(\"pm.test\")\r",
+									"\r",
+									"    let secondRequest = newFlowFolder.item.find(req => { return req.name === \"Get User Information\" | req.name === \"Get User Information Copy\"})\r",
+									"    let secondTest = secondRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(secondTest.script.exec.toString(), 'check second test').to.include(\"pm.test\")\r",
+									"\r",
+									"    let thirdRequest = newFlowFolder.item.find(req => { return req.name === \"Account summary\" | req.name === \"Account summary Copy\"})\r",
+									"    let thirdTest = thirdRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(thirdTest.script.exec.toString(), 'check third test').to.include(\"pm.test\")\r",
+									"\r",
+									"    let fourthRequest = newFlowFolder.item.find(req => { return req.name === \"User Logout\" | req.name === \"User Logout Copy\"})\r",
+									"    let fourthTest = fourthRequest.event.find(event => {return event.listen === \"test\"})\r",
+									"    pm.expect(fourthTest.script.exec.toString(), 'check fourth test').to.include(\"pm.test\")\r",
+									"\r",
+									"    pass += 1\r",
+									"})\r",
+									"\r",
+									"// visualization for test results\r",
+									"let template\r",
+									"if (pass == totalToPass) {\r",
+									"    template = `🍪 passing!\r",
+									"        <br />\r",
+									"        <img src=\"https://media0.giphy.com/media/i38CnPRuM7OqA/giphy.gif?cid=ecf05e47c6twexhj3sivdu9f2sgyaz4mqrfvi9mhgfoek73d&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"} else {\r",
+									"    template = `🙅 please try again\r",
+									"        <br />\r",
+									"        <img src=\"https://media4.giphy.com/media/1gdie6tuheZwGlnfwj/giphy.gif?cid=ecf05e47zzsolbpfh0h1mp0ypnqlvuzc2xtodaprxs4yrk4p&rid=giphy.gif&ct=g\" />\r",
+									"    `\r",
+									"}\r",
+									"pm.visualizer.set(template)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "16820f8b-f7ea-4bbc-8112-460c6e29ee4b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{postman_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.getpostman.com/collections/{{collectionUid}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"getpostman",
+								"com"
+							],
+							"path": [
+								"collections",
+								"{{collectionUid}}"
+							]
+						},
+						"description": "It's time to submit your solution.\n\n1. **Use a Postman environment:** Find the `Postman API env` environment from the previous challenge. Update the `collectionUid` with the current collection's ID.\n1. **Validate your solution**: Save your changes in the collection and environment. Hit **Send** and look under the **Tests** tab of the server response at the bottom to review your test results.\n\nIf you have any failures, review the failed test results or ask for support in the [community forum](https://community.postman.com/). When all of your tests pass, you are done with today's challenge. Remember to save your changes as you'll need to pass all the challenges to claim a **30 days of Postman** badge."
+					},
+					"response": []
+				}
+			],
+			"id": "a4dc425b-2ac7-429b-bf11-b60839342845",
+			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0219d25f-5ae8-4130-8aed-3c1c90e99986",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "30df10e4-beb5-415d-9bc2-79872ff9c1f8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "098690f3-b40d-453e-bbf0-2ea35f2807c4",
+			"key": "baseUrl",
+			"value": "http://security.postman-breakable.com",
+			"type": "string"
+		},
+		{
+			"id": "6f25b366-1cf2-4ec7-8d98-cba54bc09a3e",
+			"key": "user_id",
+			"value": "77555a88-dd7c-437a-a086-f886f6cf1c11",
+			"type": "string"
+		},
+		{
+			"id": "d2f65fa1-74de-4bb4-9215-f021d8c09839",
+			"key": "collectionUid",
+			"value": "23721371-7ce274f1-d212-42fe-abaa-31b7c305193f",
+			"type": "string"
+		},
+		{
+			"id": "f87de49e-fa0f-404c-ae55-fd331c2fc391",
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNzc1NTVhODgtZGQ3Yy00MzdhLWEwODYtZjg4NmY2Y2YxYzExIiwidXNlcm5hbWUiOiJiYmJncyIsImV4cGlyZXMiOjE2NzUxMDAwOTQuNjA4MzU3fQ.iF538nDwdcW-u7ZOaKSDcCA-9-k1tAF9mCKVQTL8UVk"
+		},
+		{
+			"id": "e94adb18-782c-454b-a89c-0852b6000a24",
+			"key": "session_token",
+			"value": ""
+		}
+	]
+}
