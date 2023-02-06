@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "ce3336e1-75ed-4de7-9515-c542d1526419",
+		"_postman_id": "f03d6e00-9330-4877-a51e-ba2a4bbd2875",
 		"name": "Day 02: Collections and environments",
 		"description": "## Instructions for Day 2: Collections and environments\n\n1.  **Get the challenge:** Fork [the parent collection `Day 02: Collections and environments`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-3e883267-c7b7-4696-81a8-13308d3fda7f) to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation. Remember, if you find it bothersome to navigate between the documentation while working in a different area of Postman, you can open a new tab to keep your place in the documentation, and then switch between tabs.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Adding requests](https://learning.postman.com/docs/sending-requests/intro-to-collections/#adding-requests)\n*   [Creating environments](https://learning.postman.com/docs/sending-requests/managing-environments/#creating-environments)\n*   [Postman API](https://learning.postman.com/docs/developer/intro-api/)\n    \n\n## Additional resources\n\n*   [Postman Environments: How to Control Access to Variables, Workflows, and More](https://blog.postman.com/postman-environments-how-to-control-access-to-variables-workflows-and-more/) blog\n*   [Initial vs Current Values for Variables](https://youtu.be/I6vClap0ajU) video\n*   [Collections and environments](https://www.tiktok.com/@joycejetson/video/7061999729462250799) tiktok\n    \n\n## Next challenge\n\n*   [Add request details](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-969f4824-25ba-4ed6-8926-f71ce4ee079d)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-ce3336e1-75ed-4de7-9515-c542d1526419"
+		"_uid": "23721371-f03d6e00-9330-4877-a51e-ba2a4bbd2875"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 			"item": [
 				{
 					"name": "POST raw text",
-					"id": "3922d091-4092-4dbc-b8d2-5d9f1fc6b402",
+					"id": "4f4f19f7-ee7e-4ab1-86f2-b2f667e0dff7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -43,7 +43,7 @@
 				},
 				{
 					"name": "GET with query params",
-					"id": "0143724b-09ce-4fa2-9647-699429665427",
+					"id": "883be4ef-afd2-45b6-bc7c-330dc5a34e54",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -83,7 +83,7 @@
 					"response": []
 				}
 			],
-			"id": "a5430d1e-4ac6-4fe1-8002-26397e3459bb",
+			"id": "0dd2b8da-f9b9-4b8b-849b-3bd2dba4a50f",
 			"description": "Follow the instructions in the request documentation."
 		},
 		{
@@ -95,7 +95,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6f854aff-93e7-431f-8597-e48b852d1a96",
+								"id": "65de7707-f616-4c72-8d36-1681f25d3fbf",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -156,7 +156,7 @@
 							}
 						}
 					],
-					"id": "caf8179f-fcae-4381-b5b1-763e1c53c899",
+					"id": "6c1279e9-0c59-4633-9341-bfb7c4cc9d80",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -187,8 +187,38 @@
 					"response": []
 				}
 			],
-			"id": "560c9dc8-f2f5-44cf-bf0d-683c0d0c32ee",
+			"id": "94629d47-d653-4208-a221-6169d137d661",
 			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cf50b8bf-f1d3-424e-91b5-d06886e240bb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d7de649e-920b-4c8c-87ce-aee8310d8dc2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "48c03a3f-21e9-4414-a8be-d3ab7471434e",
+			"key": "collectionUid",
+			"value": "23721371-02e640d1-2728-47d2-afb8-22bc216787f0",
+			"type": "string"
 		}
 	]
 }

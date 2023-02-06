@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "822e1de3-2df6-4de2-9666-2e7dcc633047",
+		"_postman_id": "59f19274-b691-4176-818a-1d7059eeb27c",
 		"name": "Day 27: Scenario testing",
 		"description": "## Instructions for Day 27: Scenario testing\n\n1.  **Get the challenge:** Fork [the parent collection `Day 27: Scenario testing`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392) from the main workspace to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n*   [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n*   [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n    \n\n## Additional resources\n\n*   [How to break an API](https://youtu.be/c-5UMf6sWk4) livestream\n*   [How Secure are your APIs?](https://youtu.be/shT-Obfo-uk) livestream\n*   [Acing your API tests — what you need to know for test automation](https://medium.com/better-practices/acing-your-apis-what-you-need-to-know-for-test-automation-e3fdba3519b9) blog\n*   [Scenario testing](https://www.tiktok.com/@joycejetson/video/7076059976770276650) tiktok\n    \n\n## Next challenge\n\n*   [UI testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-01eeea90-778a-4d8f-82b6-87e16ca7d45e)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-822e1de3-2df6-4de2-9666-2e7dcc633047"
+		"_uid": "23721371-59f19274-b691-4176-818a-1d7059eeb27c"
 	},
 	"item": [
 		{
@@ -15,7 +15,7 @@
 					"item": [
 						{
 							"name": "Creat user",
-							"id": "f07b41db-5845-467e-861b-cd61005e2d5b",
+							"id": "431c9644-4b67-4dba-8fc9-676cf696e45a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -44,7 +44,7 @@
 							"response": []
 						}
 					],
-					"id": "c847713f-4209-4fac-8493-a17e9ec09de4"
+					"id": "cd52900b-ae79-44c9-8123-f00d0645b04f"
 				},
 				{
 					"name": "New user workflow",
@@ -55,7 +55,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "5003fc2f-0346-41f3-ae75-8226d9f17521",
+										"id": "6cad4f26-ba86-4f6f-a9ef-12dea0d36098",
 										"exec": [
 											"let responseJson = pm.response.json()\r",
 											"pm.test(\"Status code is 200\", function () {\r",
@@ -76,7 +76,7 @@
 									}
 								}
 							],
-							"id": "2b7ee2b7-9417-4295-b1b6-6f144c27df03",
+							"id": "5de27797-e88e-44f7-ae35-c7853cc71848",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -111,7 +111,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "fbfccca1-372e-4017-afb2-8367b37052e6",
+										"id": "48d59e98-625f-4cfd-8343-d87fd5f9aef2",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"\tpm.response.to.have.status(200);\r",
@@ -121,7 +121,7 @@
 									}
 								}
 							],
-							"id": "0003eda9-1914-4dd8-84f5-fce89b5f6ae9",
+							"id": "fa13c42b-0b15-451a-bd24-15cbffbaeaa0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -175,7 +175,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "cf4e3663-6196-4855-b18d-71ca70b9c899",
+										"id": "5a8d3dc7-183b-4df0-9fc3-4fa1b1727930",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"\tpm.response.to.have.status(200);\r",
@@ -188,7 +188,7 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "ffd25624-6d85-4fd5-bf80-8e94d70951f1",
+										"id": "86bb8dd4-e3b1-4fbd-89e8-489688d65b2f",
 										"exec": [
 											""
 										],
@@ -196,7 +196,7 @@
 									}
 								}
 							],
-							"id": "17d6886d-1708-4f2e-a510-63fbdb10e84d",
+							"id": "9ef96d87-49df-4d3c-b54b-21a74ff41cac",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -258,7 +258,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9dacfbc1-df31-44c4-b3f5-ec7f354e2f31",
+										"id": "b86b7ea9-3770-44e4-8a6e-e5e2cb2428ee",
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"\tpm.response.to.have.status(200);\r",
@@ -268,7 +268,7 @@
 									}
 								}
 							],
-							"id": "22fad2cf-1ce3-42ae-8372-f327bf056d75",
+							"id": "0507cef8-c387-4b46-902c-51d0ff05afa9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -329,7 +329,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "cb85d3c7-2819-47af-84aa-be753ec6cd04",
+										"id": "d10c4023-336d-44d6-9f70-5ece0ad256a0",
 										"exec": [
 											"pm.test(\"User unauthenticated! Status code is 403\", function () {\r",
 											"\tpm.response.to.have.status(403);\r",
@@ -339,7 +339,7 @@
 									}
 								}
 							],
-							"id": "fc16047f-b842-40c1-9b8b-a059ef745344",
+							"id": "0d8faefc-c0ed-4dc7-81b8-f315842f175e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -390,18 +390,18 @@
 							"response": []
 						}
 					],
-					"id": "dc4ee6bc-a9e4-4244-bcb6-f27d1329f255",
+					"id": "c0205370-2b99-4899-90b5-122da7554bcf",
 					"auth": {
 						"type": "apikey",
 						"apikey": [
 							{
-								"key": "key",
-								"value": "X-API-Key",
+								"key": "value",
+								"value": "{{token}}",
 								"type": "string"
 							},
 							{
-								"key": "value",
-								"value": "{{session_token}}",
+								"key": "key",
+								"value": "X-API-Key",
 								"type": "string"
 							}
 						]
@@ -410,7 +410,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6b4d7d04-a722-4089-aa2a-496773d0a244",
+								"id": "d68b2e47-80dd-40ff-82fb-c2602aa634a0",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -420,7 +420,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f70fc5c8-09bb-4760-ac58-22e6231522e9",
+								"id": "5538a330-deb9-4552-bcba-ad9b7817c7af",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -430,13 +430,13 @@
 					]
 				}
 			],
-			"id": "2e230653-3c41-4b02-a4c1-da14a31a9332",
+			"id": "ae39f887-1d05-4446-9814-a5b4a19ff532",
 			"description": "It's time to work on your next challenge.\n\n1.  **Create API and collection**: Import [this API specification](https://github.com/kmmanoj96/vulnerable-apis/blob/main/openAPISpecBank.yaml), and generate a collection from the specification. You can do this using any method you prefer.Once this step is completed, make sure you have an API and associated collection, both called `Good Bank API`.\n2.  **Add folders**: Add two new folders called `Setup` and `New user workflow` nested under the `Scenario testing` folder.\n3.  **Add URL**: Find the `baseUrl` used in the `Good Bank API` collection, and add it as a collection variable called `baseUrl` to the `Day 27: Scenario testing` collection.\n4.  **Set up a new user**: Find the following request in the `Good Bank API` collection, and duplicate it over to the `Setup` folder.\n    \n    *   `POST` Create User\n    \n    Under the **Body** tab, update the username and password of your new user. Make a note of this information using any method you prefer. Hit **Send** to create a new user. The response will contain a `user_id`. Create a collection variable called `user_id` with this information, using any method you prefer.\n5.  **Add a scenario**: Find the following requests in the `Good Bank API` collection, and duplicate them over to the `New user workflow` folder.\n    \n    *   `POST` User Login\n    *   `GET` Get User Information (create this endpoint based on what you have learned about REST)\n    *   `GET` Account summary\n    *   `GET` User Logout\n    *   `GET` Account summary\n    \n    Find the `User Login` request, and update the request body with the `username` and `password` of the new user you created in the previous step. Add a Postman test to verify a successful response (you may need to send the request first). Then, add some code under the **Tests** tab to set two collection variables (`user_id` to store the logged in user's id and `token` to store the session token for the logged in user). Send the request again to verify the variables are set correctly.\n6.  **Add authorization**: Set an `API Key` authorization type for the folder `New user workflow` using the new `token` variable. This particular API requires that a token be submitted as a request header called `x-api-key`. Each request within the `New user workflow` folder should inherit authorization from the folder.\n7.  **Continue the scenario**: Add a test to each request within the `New user workflow` to verify a successful response.\n    *   `GET` Get User Information\n    *   `GET` Account summary - Update the path parameter to utilize your new `user_id` variable.\n    *   `GET` User Logout\n    *   `GET` Account summary - Update your test of a successful response to verify a `403` HTTP status code, since after the user logs out, they should not be able to access their account summary.\n8.  **Run the folder**: Use the runner to execute all the requests in the folder `New user workflow`. Make sure all your tests pass, and save your changes.\n    \n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "c4bf261c-26fc-451f-acbc-f025dca1c1b3",
+						"id": "d99118f7-acfe-4b9a-b51c-61ad5be521ab",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -446,7 +446,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "19e829a8-2165-46ff-b200-b9fa6a788b28",
+						"id": "5b09eb5b-5381-4f92-b6a0-29629128c994",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -464,7 +464,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0e97b9c1-e6cf-4b1e-bf52-a0fdf0c7b8b0",
+								"id": "6d4bdbc5-334e-4420-b0bc-edae35d5a47f",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -504,7 +504,7 @@
 									"pm.test(\"Authorization added correctly\", () => {\r",
 									"    let newFlowFolder = scenarioFolder.item.find(fol => { return fol.name === \"New user workflow\" })\r",
 									"    pm.expect(newFlowFolder.auth.type).equals(\"apikey\")\r",
-									"    pm.expect(newFlowFolder.auth.apikey[1].value).equals(\"{{session_token}}\")\r",
+									"    pm.expect(newFlowFolder.auth.apikey[0].value).equals(\"{{token}}\")\r",
 									"\r",
 									"    pass += 1\r",
 									"})\r",
@@ -566,7 +566,7 @@
 							}
 						}
 					],
-					"id": "16820f8b-f7ea-4bbc-8112-460c6e29ee4b",
+					"id": "8ec6457e-afe5-49cf-a227-9d6812ed3859",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -597,7 +597,7 @@
 					"response": []
 				}
 			],
-			"id": "a4dc425b-2ac7-429b-bf11-b60839342845",
+			"id": "bfaf3d4b-3354-421c-80be-3d5759f6233e",
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
@@ -605,7 +605,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0219d25f-5ae8-4130-8aed-3c1c90e99986",
+				"id": "ceb3ae5b-d154-4144-a37f-f6d73e1b7255",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -615,7 +615,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "30df10e4-beb5-415d-9bc2-79872ff9c1f8",
+				"id": "49d63fcb-e6f7-4539-9cb8-acdaec6523f5",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -625,32 +625,32 @@
 	],
 	"variable": [
 		{
-			"id": "098690f3-b40d-453e-bbf0-2ea35f2807c4",
+			"id": "64d87e92-359d-46af-ae0a-e4c32b0a7a6f",
 			"key": "baseUrl",
 			"value": "http://security.postman-breakable.com",
 			"type": "string"
 		},
 		{
-			"id": "6f25b366-1cf2-4ec7-8d98-cba54bc09a3e",
+			"id": "9acaa49b-4c74-44bd-bcf4-f99bda880479",
 			"key": "user_id",
 			"value": "77555a88-dd7c-437a-a086-f886f6cf1c11",
 			"type": "string"
 		},
 		{
-			"id": "d2f65fa1-74de-4bb4-9215-f021d8c09839",
+			"id": "b3bd274f-f8f7-4075-9142-685c1acdf439",
 			"key": "collectionUid",
 			"value": "23721371-7ce274f1-d212-42fe-abaa-31b7c305193f",
 			"type": "string"
 		},
 		{
-			"id": "f87de49e-fa0f-404c-ae55-fd331c2fc391",
+			"id": "0f4f5d45-66ce-4aee-b0c2-08fd75f68bba",
 			"key": "token",
 			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNzc1NTVhODgtZGQ3Yy00MzdhLWEwODYtZjg4NmY2Y2YxYzExIiwidXNlcm5hbWUiOiJiYmJncyIsImV4cGlyZXMiOjE2NzUxMDAwOTQuNjA4MzU3fQ.iF538nDwdcW-u7ZOaKSDcCA-9-k1tAF9mCKVQTL8UVk"
 		},
 		{
-			"id": "e94adb18-782c-454b-a89c-0852b6000a24",
+			"id": "48dce88a-8fd4-447e-a706-548418d9cbb9",
 			"key": "session_token",
-			"value": ""
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNzc1NTVhODgtZGQ3Yy00MzdhLWEwODYtZjg4NmY2Y2YxYzExIiwidXNlcm5hbWUiOiJiYmJncyIsImV4cGlyZXMiOjE2NzU2MzI1OTAuOTczMTczMX0.5KY1NsOD7ltxBB5HtV4MRVker0BIm21TkQnh8GL1Qh4"
 		}
 	]
 }

@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "07621953-f021-4526-bb71-5fb5deb0f203",
+		"_postman_id": "ebcf9b13-e4a2-41e8-a9ff-ed30219399a4",
 		"name": "Day 13: Newman",
 		"description": "## Instructions for Day 13: Newman\n\n1.  **Get the challenge:** Fork [the parent collection `Day 13: Newman`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-a509b7b4-4b46-4593-9dec-2bafbe7d9524) from the main workspace to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n*   [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n*   [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n*   [Running collections on the command line with Newman](https://learning.postman.com/docs/running-collections/using-newman-cli/command-line-integration-with-newman/)\n    \n\n## Additional resources\n\n*   [Newman on GitHub](https://github.com/postmanlabs/newman)\n*   [Newman on npm](https://www.npmjs.com/package/newman)\n*   [Newman](https://www.tiktok.com/@joycejetson/video/7067909067594894638) tiktok\n    \n\n## Next challenge\n\n*   [OAuth](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-0e372950-c58c-483d-aea9-fe676547e6f0)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-07621953-f021-4526-bb71-5fb5deb0f203"
+		"_uid": "23721371-ebcf9b13-e4a2-41e8-a9ff-ed30219399a4"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8e96b91b-9264-4d49-975c-33eda252b281",
+								"id": "e07ed21d-2591-46b6-9525-99d670c08322",
 								"exec": [
 									"const responsData = pm.response.json()\r",
 									"console.log(responsData.results[0].name)\r",
@@ -26,7 +26,7 @@
 							}
 						}
 					],
-					"id": "790de0af-709a-43b9-bc85-c3325fcd641f",
+					"id": "215543cc-9b7b-4a9c-a910-050ff9279644",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -54,7 +54,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bf047547-1fd0-42b5-b327-6ade7f9a0b2a",
+								"id": "ea7fae3b-9d48-49a7-8894-fbf9affb0a72",
 								"exec": [
 									"//const responsData = pm.response.json()\r",
 									"//console.log(responsData)\r",
@@ -82,7 +82,7 @@
 							}
 						}
 					],
-					"id": "5f27e780-fe43-4aaa-8e4b-6ef869e5f1e5",
+					"id": "20aa45b5-b099-4403-acb1-35fb1de3639d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -105,7 +105,7 @@
 					"response": []
 				}
 			],
-			"id": "190b2ee3-ca1c-4e18-a1c5-ad8a219905e0",
+			"id": "d68eecda-9e61-435d-85fe-8f857f67433d",
 			"description": "It's time to work on your next challenge.\n\n1. **Add a request**: Add a request called `planets` to the folder `Newman` with the following details:\n  - `GET` request method\n  - `https://swapi.dev/api/planets` request URL\n\n  [Write a Postman test](https://learning.postman.com/docs/writing-scripts/test-scripts/) to validate the response includes a planet called \"Tatooine\"\n1. **Add a second request**: Next, add a request called `species`:\n  - `GET` request method\n  - `https://swapi.dev/api/species` request URL\n\n  Write a Postman test to validate the response on the first page includes a species that speaks the \"Ewokese\" language.\n\n  Then write a script to see how many species included in the first page of results have an average height greater than 100. Log this number to the console. Save this number as a collection variable called `talls`, and then [persist the data](https://learning.postman.com/docs/sending-requests/variables/#sharing-and-persisting-data) so that `INITIAL VALUE` and `CURRENT VALUE` are the same.\n\n  Make sure the two requests are behaving as expected before moving on to the next step.\n1. **Set up Newman**: To run this collection from your command line, set up Newman on your local machine.\n  - Download and install [Node.js](https://nodejs.org/en/download/current/) for Linux, Windows, or Mac OSX\n  - Install [Newman](https://www.npmjs.com/package/newman) from npm globally on your system using the following command\n```\n$ npm install -g newman\n```\n1. **Export a collection to run it**: You can run a collection using a path to the file or the [Postman API](https://learning.postman.com/docs/developer/intro-api/) to retrieve a collection. In this example, we will [export this collection](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#exporting-postman-data) `Day 13: Newman`. Run the collection.\n```\n$ newman run \"Day 13- Newman.postman_collection.json\"\n```\n  It is expected that a few tests fail in the second folder, but not in the first folder.\n1. **Run a folder**: Run the command again, this time adding the option `--folder [folderName]` to the end, to specify the first folder to run from the collection. Make sure you have no failed tests.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution, this time using Newman. Follow the instructions in the request documentation.",
 			"event": [
 				{
@@ -115,7 +115,7 @@
 						"exec": [
 							""
 						],
-						"id": "191d6595-4dda-4a6d-969a-55b8db04aa78"
+						"id": "5798d481-5fbb-4f53-a1df-774333e3bf79"
 					}
 				},
 				{
@@ -125,7 +125,7 @@
 						"exec": [
 							""
 						],
-						"id": "d3469bed-f316-4a47-b103-46dfe5cf4e42"
+						"id": "9b825f2d-923c-42e6-902d-a6db9f9da9a5"
 					}
 				}
 			]
@@ -139,7 +139,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "160867a9-6d93-4bc3-8aca-ca68589a0067",
+								"id": "ffd36f47-7d26-423f-a215-b05d74fa1e5f",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -218,7 +218,7 @@
 							}
 						}
 					],
-					"id": "d6d775bf-2678-4b77-8b5a-25b2321c3d12",
+					"id": "6d45d84d-9422-4b25-8dea-ae8ea9238217",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -249,7 +249,7 @@
 					"response": []
 				}
 			],
-			"id": "391cc3f6-d99c-4ca5-9e6c-78a9019c1695",
+			"id": "86d8900f-3930-4934-a62b-4ab20a566d35",
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
@@ -257,7 +257,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6bfe0103-f6c6-4c9d-abcd-a3d43bf8ca23",
+				"id": "cd6ffe11-7160-4092-9649-a39ed34354ad",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -267,7 +267,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e03656f0-4c2a-4c22-9285-e30a0f21d7ad",
+				"id": "3a4b916b-7336-4a28-bfa9-9d58de6aa0a0",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -277,9 +277,15 @@
 	],
 	"variable": [
 		{
-			"id": "ff524b41-eb09-4112-8762-e5082bb60036",
+			"id": "3b730bd4-6816-4db5-9bbc-c3dc15def429",
 			"key": "talls",
 			"value": 7
+		},
+		{
+			"id": "5d61f7c7-eb0f-47cf-9c7f-d6166045eb02",
+			"key": "collectionUid",
+			"value": "23721371-e3cce52f-fc94-40d2-83bc-8ca9420ec160",
+			"type": "string"
 		}
 	]
 }

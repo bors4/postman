@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "fa030545-25c9-4442-9307-f0ff5d17961c",
+		"_postman_id": "12f11305-cccf-454a-a75e-3f2744a0fc16",
 		"name": "Day 05: Variables",
 		"description": "## Instructions for Day 5: Variables\n\n1.  **Get the challenge:** Fork [the parent collection `Day 05: Variables`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-7b48e949-713b-4922-bb69-73fb949cd5af) to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Variable scopes](https://learning.postman.com/docs/sending-requests/variables/)\n*   [Defining variables](https://learning.postman.com/docs/sending-requests/variables/#defining-variables)\n    \n\n## Additional resources\n\n*   [10 tips for working with variables](https://blog.postman.com/10-tips-for-working-with-postman-variables/) blog\n*   [Variables](https://www.tiktok.com/@joycejetson/video/7063092655215119663) tiktok\n    \n\n## Next challenge\n\n*   [Tests](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-1ac59603-2ea0-4568-ac54-9f793bc06456)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-fa030545-25c9-4442-9307-f0ff5d17961c"
+		"_uid": "23721371-12f11305-cccf-454a-a75e-3f2744a0fc16"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 			"item": [
 				{
 					"name": "collection variable",
-					"id": "52ff1306-595a-47ce-b81a-6550010fe47e",
+					"id": "289a41a0-ff82-4e09-ac28-571e3bf4c323",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -36,7 +36,7 @@
 				},
 				{
 					"name": "global variable",
-					"id": "deb1a056-318e-4564-9dcd-5c5d67080b16",
+					"id": "bd66ed40-6ce2-4e97-b65b-864cef22ccda",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -59,7 +59,7 @@
 					"response": []
 				}
 			],
-			"id": "5d06e859-95c4-48ea-bfbd-dbe257a13ed2",
+			"id": "002ad1af-1a92-4b56-b685-3c02c26f233f",
 			"description": "It's time to work on your next challenge.\n\nWe've already used environment variables in previous challenges. Let's use the [CoinDesk API](https://www.coindesk.com/coindesk-api) to learn more about variables in Postman. This API allows you to programmatically access the price of bitcoin.\n\n1. **Add a request**: Add a request called `collection variable` to the folder `Variables` with the following details:\n  - `GET` method\n  - `https://api.coindesk.com/v1/bpi/currentprice/btc.json` request URL\n1. **Add a collection variable**: Highlight `https://api.coindesk.com` in the request URL and [set a new collection variable](https://learning.postman.com/docs/sending-requests/variables/#defining-variables) called `coindeskBaseUrl` with the value `https://api.coindesk.com`. Hover on the new variable to verify the variable is set at the proper scope (collection). \n\n  A collection variable is tightly coupled with the collection and can only be used with that collection. On the other hand, environment variables can be used across many collections, in the same way you've stored your Postman API key in the same environment to be used with different collections. \n\n  You can also create and edit collection variables by selecting the collection and tabbing over to **Variables**. We will also learn how to programmatically set variables in future challenges. Hit send to ensure a 200 status code, and save your changes.\n1. **Add a global variable**: Duplicate the request within this folder, and rename the second request to `global variable`. Create a global variable using any way that you prefer. The global variable should be called `currency` with the value `btc` replacing the \"btc\" part of the request URL path. A global variable is accessible within the current workspace. You can manually edit global variables in the **Environments** tab on the left sidebar, under **Globals**. Do that now to update `btc` to a [different currency](https://api.coindesk.com/v1/bpi/supported-currencies.json) of your choosing, like `usd`. Send to ensure a 200 status code, and save your changes.\n1. **Variable scopes**: Postman provides a number of variable scopes to suit your particular use case. Learn more about [variable scopes and when to choose a variable scope](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes).\n1. **Initial and current values**: As you've learned from previous challenges, initial values may be accessible to others in a Team or Public workspace. Current values are local, and not synced or shared. Since we are working in a public workspace, it's very important to only add sensitive data to `CURRENT VALUE`. Learn more about [sharing and persisting data](https://learning.postman.com/docs/sending-requests/variables/#sharing-and-persisting-data).\n\nIn upcoming challenges, we'll learn more about defining and accessing variables in scripts, data variables, and dynamic variables.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
 			"event": [
 				{
@@ -69,7 +69,7 @@
 						"exec": [
 							""
 						],
-						"id": "e78b0662-ec06-4942-ba26-38ef4e652112"
+						"id": "8992e9bc-2103-414d-abec-3d5c8b931207"
 					}
 				},
 				{
@@ -79,7 +79,7 @@
 						"exec": [
 							""
 						],
-						"id": "13a678c9-3296-49ef-a48c-a9e9e1e92151"
+						"id": "bc2d654f-f2d8-4dd7-8bbc-e4ea3231e803"
 					}
 				}
 			]
@@ -93,7 +93,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f3ffd190-772b-4d4d-ae4a-b4806519d8bc",
+								"id": "ace8ab08-f0f8-45f4-8c46-95c295a7b618",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -157,7 +157,7 @@
 							}
 						}
 					],
-					"id": "7365a0b1-9c6d-43dc-84d8-39e488d920b6",
+					"id": "cdec49db-61a9-496c-969f-bd42997957d4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -188,7 +188,7 @@
 					"response": []
 				}
 			],
-			"id": "39dc09e1-9215-4059-915e-7579ed021e8d",
+			"id": "a0cb823d-27b6-47db-a70d-4c6a0d94d5f9",
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
@@ -211,7 +211,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f3ffc424-3097-493e-b64e-5379eeff3998",
+				"id": "f01ce35d-26ca-41dc-b727-46ffdc0d3ed7",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -221,7 +221,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d2f5f032-469f-4d37-aebb-a6b4d8fa7d61",
+				"id": "1dc3649b-bbe4-4d35-9ba3-cbc242527b48",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -231,9 +231,15 @@
 	],
 	"variable": [
 		{
-			"id": "31e95c6f-e630-4701-b4d6-69da86ef6b8e",
+			"id": "53672127-d35f-4aff-9c95-60830d9bb54c",
 			"key": "coindeskBaseUrl",
 			"value": "https://api.coindesk.com",
+			"type": "string"
+		},
+		{
+			"id": "bbaf480c-d80c-497e-a8d8-3911a3b148f6",
+			"key": "collectionUid",
+			"value": "23721371-950e8cbd-16de-44bd-911a-510ee7fcf6d1",
 			"type": "string"
 		}
 	]

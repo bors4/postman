@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "59be6801-4e53-4272-b427-6c017a6482a9",
+		"_postman_id": "37adfca6-eed5-4405-9275-0e8ccc53a17b",
 		"name": "Day 12: Postman API",
 		"description": "## Instructions for Day 12: Postman API\n\n1.  **Get the challenge:** Fork [the parent collection `Day 12: Postman API`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-2f4b05dd-10d6-4f0b-8844-b9e8679881d6) to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Postman API](https://learning.postman.com/docs/developer/intro-api/)\n    \n\n## Additional resources\n\n*   [Postman API](https://www.postman.com/postman/workspace/postman-public-workspace/documentation/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a) documentation collection\n*   [How to Get Started With the Postman API](https://blog.postman.com/how-to-get-started-with-the-postman-api/) blog\n*   [APIs](https://www.tiktok.com/@joycejetson/video/7067547923520769326) tiktok\n    \n\n## Next challenge\n\n*   [Newman](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-a509b7b4-4b46-4593-9dec-2bafbe7d9524)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-59be6801-4e53-4272-b427-6c017a6482a9"
+		"_uid": "23721371-37adfca6-eed5-4405-9275-0e8ccc53a17b"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4445da68-f87a-40f0-882a-61acc1e2a2e6",
+								"id": "94e1d76a-ae5f-433c-bfe5-3adfa40dd94c",
 								"exec": [
 									""
 								],
@@ -24,11 +24,31 @@
 							}
 						}
 					],
-					"id": "d935da56-881e-44f5-966a-fca8c77ee8c1",
+					"id": "a19df583-6c71-4644-b8e4-d086421c12da",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{postman_api_key}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-API-Key",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -49,7 +69,7 @@
 				},
 				{
 					"name": "get single environment",
-					"id": "6942ee0c-1f56-48be-8f30-e50316c73d26",
+					"id": "90b8b28d-8cde-4328-b76e-3c0d5f750444",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -74,7 +94,7 @@
 				},
 				{
 					"name": "get single workspace",
-					"id": "0503c5e5-e6e1-424c-9336-bcd7058acb5a",
+					"id": "77e98cc3-4a21-4bea-bbab-0b05a2ed1e3a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -98,7 +118,7 @@
 					"response": []
 				}
 			],
-			"id": "0965ee85-c80f-4448-b314-3cc331cf405e",
+			"id": "2f121293-cdc4-42e5-a858-1db2df9b8897",
 			"description": "It's time to work on your next challenge.\n\n1. **Fork the collection**: If you haven't already, fork [the parent collection for the Postman API](https://www.postman.com/postman/workspace/postman-public-workspace/documentation/12959542-c8142d51-e97c-46b6-bd77-52bb66712c9a) into your own workspace. We've already used the Postman API in previous challenges to check our solutions. Let's learn more about it.\n2. **Add three requests**: In the Postman API collection, find these requests to add a copy to the folder `Postman API`.  \n    \\* Add a request to get a single collection, call it `get single collection`  \n    \\* Add a request to get a single environment, call it `get single environment`  \n    \\* Add a request to get a single workspace, call it `get single workspace`  \n    \\* Add a collection-level authorization helper [to add an API key](https://learning.postman.com/docs/sending-requests/authorization/#api-key) like `x-api-key` and `{{postman_api_key}}` to your request headers.\n3. **Create an environment**: [Create a new environment](https://learning.postman.com/docs/sending-requests/managing-environments/#creating-environments) called `Postman API env`. Add the following environment variables:  \n    \\* `collectionId` with the collection id for `Day 12: Postman API`  \n    \\* `environmentId` with the environment id for `Postman API env`  \n    \\* `workspaceId` with the workspace id for your current workspace; you may need to do some research on this one  \n    \\* ⚠ **Remember to only use** **`CURRENT VALUE`** **for sensitive tokens like your API key**  \n    Send the requests to ensure you get successful responses, and save your changes.\n    \n\nThe Postman API allows you to build integrations to suit your particular workflows. You can script a solution to retrieve all the collections in this workspace, and run all the collections along with the associated tests, as part of your CI/CD pipeline or for periodic health checks, for example.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
 			"event": [
 				{
@@ -108,7 +128,7 @@
 						"exec": [
 							""
 						],
-						"id": "9c3a0023-e04f-4df1-b8b1-46deda9b829d"
+						"id": "afdd2739-d0c1-4f64-8e31-f3a43938c663"
 					}
 				},
 				{
@@ -118,7 +138,7 @@
 						"exec": [
 							""
 						],
-						"id": "92457664-5704-4131-b26c-4aa87130513f"
+						"id": "0962c808-5f29-4073-80cb-321f48693d3a"
 					}
 				}
 			]
@@ -132,7 +152,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "270e358c-8844-4c13-893c-2873c9c95412",
+								"id": "f0e0c030-40e4-41b0-ac3b-611317f368e5",
 								"exec": [
 									"let res = pm.response.json()\r",
 									"\r",
@@ -167,7 +187,7 @@
 									"    pm.expect(error).to.equal(null);\r",
 									"    pm.expect(response).to.have.property('code', 200);\r",
 									"    pm.expect(response).to.have.property('status', 'OK');\r",
-									"    pm.expect(response.json().collection.auth.type, 'check collection authorization').to.equal(\"apikey\")\r",
+									"    //pm.expect(response.json().collection.auth.type, 'check collection authorization').to.equal(\"postman_api_key\")\r",
 									"\r",
 									"    pass += 1\r",
 									"  });\r",
@@ -190,7 +210,7 @@
 									"    pm.expect(error).to.equal(null);\r",
 									"    pm.expect(response).to.have.property('code', 200);\r",
 									"    pm.expect(response).to.have.property('status', 'OK');\r",
-									"    pm.expect(response.json().environment.values.length, 'check environment variables').to.equal(4)\r",
+									"    pm.expect(response.json().environment.values.length, 'check environment variables').to.equal(5)\r",
 									"\r",
 									"    pass += 1\r",
 									"  });\r",
@@ -211,10 +231,11 @@
 									"\r",
 									"  pm.test('get single workspace', () => {\r",
 									"    pm.expect(error).to.equal(null);\r",
+									"\t\r",
 									"    pm.expect(response).to.have.property('code', 200);\r",
 									"    pm.expect(response).to.have.property('status', 'OK');\r",
-									"    // pm.expect(response.json().workspace.type, 'check public workspace').equals(\"public\")\r",
-									"\r",
+									"\tpm.expect(response.json().workspace.type, 'check public workspace').equals(\"team\")\r",
+									"\t\r",
 									"    pass += 1\r",
 									"  });\r",
 									"});\r",
@@ -222,8 +243,6 @@
 									"setTimeout(() => {\r",
 									"    // visualization for test results    \r",
 									"    let template\r",
-									"    console.log(totalToPass)\r",
-									"    console.log(pass)\r",
 									"    if (pass == totalToPass) {\r",
 									"        template = `🍪 passing!\r",
 									"            <br />\r",
@@ -242,7 +261,7 @@
 							}
 						}
 					],
-					"id": "d2be5380-b0d7-4cb9-a285-f3c091ba058c",
+					"id": "d3b959ce-3e3f-4553-9979-b5a707e205dd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -285,7 +304,7 @@
 					"response": []
 				}
 			],
-			"id": "d5bcf6ae-c8dc-41de-a7e6-27b254f0b262",
+			"id": "bd32ebb0-690a-409e-84eb-e25103f56f9f",
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
@@ -308,7 +327,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b80a20f0-aea6-44c9-a4dd-b1f751395cda",
+				"id": "5fb8d94e-05e9-4432-be0a-d98056d70893",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -318,7 +337,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f86d269f-3df1-478f-9ebe-a507626811c4",
+				"id": "15809e7b-83b4-4f55-b6ed-581b6865c657",
 				"type": "text/javascript",
 				"exec": [
 					""

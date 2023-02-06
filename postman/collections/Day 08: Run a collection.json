@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "d21386dc-1197-4d98-b9fd-304e245b2ebb",
+		"_postman_id": "f61eb3b0-0b48-4128-96e9-7b8dae298061",
 		"name": "Day 08: Run a collection",
 		"description": "## Instructions for Day 8: Run a collection\n\n1.  **Get the challenge:** Fork [the parent collection `Day 08: Run a collection`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-1da88e07-1c0a-401c-996b-a3f2c9c3f486) to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)\n    \n\n## Additional resources\n\n*   [Log Response Data in Collection Runs](https://youtu.be/UreV_7fHKiU) video\n*   [Run collections](https://www.tiktok.com/@joycejetson/video/7065010823349112111) tiktok\n    \n\n## Next challenge\n\n*   [Scripting](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-7b82a13b-7c2a-4b51-9620-66a51df3e313)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-d21386dc-1197-4d98-b9fd-304e245b2ebb"
+		"_uid": "23721371-f61eb3b0-0b48-4128-96e9-7b8dae298061"
 	},
 	"item": [
 		{
@@ -16,10 +16,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1a7ed2f9-5458-425d-8926-dacccd61a0bd",
+								"id": "95466f93-8a13-4a16-8610-4fe9b3382f9c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
-									"\r",
 									"pm.response.to.have.status(200);\r",
 									"});"
 								],
@@ -27,7 +26,7 @@
 							}
 						}
 					],
-					"id": "7a42e57d-52cd-44f7-9537-848c78ebfbf2",
+					"id": "f1694997-3ec2-43cf-8b3a-129009b11ea9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -54,8 +53,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "43437f8c-71ec-4634-9def-39705aa63db3",
+								"id": "ab02d5f5-39c2-44ac-bf1f-b09eca8f2352",
 								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
 									"//let fameleUser = pm.response.json()\r",
 									"//fameleUser.forEach((famelU) => {console.log(famelU) });\r",
 									"\r",
@@ -67,7 +70,7 @@
 							}
 						}
 					],
-					"id": "c292094f-963f-4967-8e36-efb4f6015129",
+					"id": "9f3cb592-cc36-4585-ac16-be80ab7dac99",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -88,11 +91,6 @@
 								{
 									"key": "gender",
 									"value": "female"
-								},
-								{
-									"key": "results",
-									"value": "1",
-									"disabled": true
 								}
 							]
 						}
@@ -105,7 +103,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d8cc6546-a845-4616-996e-bed93e7da93c",
+								"id": "086c61de-008b-498a-9c51-eef9db30e07d",
 								"exec": [
 									""
 								],
@@ -113,7 +111,7 @@
 							}
 						}
 					],
-					"id": "7d1d5aca-ba23-492d-9784-51eb955160c6",
+					"id": "182e5cc3-e9e6-4cd3-aeec-6dd333764a8c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -145,7 +143,7 @@
 					"response": []
 				}
 			],
-			"id": "0ad0b71f-d7ee-4d17-acc8-25e46207c856",
+			"id": "d4d8569a-2087-4920-bfc8-962ee3e73ed8",
 			"description": "It's time to work on your next challenge.\n\nLet's use the [Random User API](https://randomuser.me/) to learn how to run a collection in Postman.\n\n1. **Add a request**: Add a request called `get random user` to the folder `Run a collection` with the following details:\n  - `GET` method\n  - `https://randomuser.me/api` request URL\n  - At least one test to determine a successful response from this API\n\n  Send the request to make sure your tests pass.\n1. **Add another request**: Duplicate the request to create a second request called `get female user`. Update the request [to retrieve a single female user](https://randomuser.me/documentation#gender). You may need to update your tests to ensure a successful response. Send the request to make sure your tests pass.\n1. **Add a third request**: Duplicate the request to create a third request called `get french user`. Update the request to retrieve a single user [that is both female, French](https://randomuser.me/documentation#nationalities). Once again, you may need to update your tests to ensure a successful response. Send the request to make sure your tests pass.\n1. **Run the folder**: Now that you have three requests with tests, you can step through and run the folder by tabbing through each of the requests and hitting **Send**. An easier way to run the requests is to use the [collection runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/). Run only the folder `Run a collection` to make sure your tests pass. Take a minute to review the configuration options, the results, and run summary.\n\nIn this challenge, we used the collection runner to run a collection from the Postman app. In future challenges, we'll work with other ways to run collections.\n\nOnce you complete these steps, make sure to save any changes, and then move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
 			"event": [
 				{
@@ -155,7 +153,7 @@
 						"exec": [
 							""
 						],
-						"id": "0b400c2c-856a-42ab-ac00-0022cb414f9e"
+						"id": "1fcc19cd-d1c0-43ab-ac5c-6ac5fb9f8fa1"
 					}
 				},
 				{
@@ -165,7 +163,7 @@
 						"exec": [
 							""
 						],
-						"id": "878203c5-93cb-4dec-9ef4-2b55e2b190fd"
+						"id": "0a2be952-c8c7-4677-9e84-b459f950d589"
 					}
 				}
 			]
@@ -179,7 +177,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "10e9c972-4771-48f3-abcc-d945562e24d2",
+								"id": "fc778e7b-6cb4-45ed-a483-62863fe6d921",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -212,7 +210,7 @@
 									"    let femaleRequest = collection.item[0].item.find(req => { return req.name === \"get female user\"})\r",
 									"    pm.expect(femaleRequest.name, 'check name').equals(\"get female user\")\r",
 									"    pm.expect(femaleRequest.request.method, 'check method').equals(\"GET\")\r",
-									"    pm.expect(femaleRequest.request.url.query.length, 'check params').equals(2)\r",
+									"    pm.expect(femaleRequest.request.url.query.length, 'check params').equals(1)\r",
 									"    pm.expect(femaleRequest.request.url.query[0].key, 'check param key').equals(\"gender\")\r",
 									"    pm.expect(femaleRequest.request.url.query[0].value, 'check param value').equals(\"female\")\r",
 									"\r",
@@ -224,7 +222,7 @@
 									"    pm.expect(frenchRequest.request.url.query[0].value, 'check gender param value').equals(\"female\")\r",
 									"    pm.expect(frenchRequest.request.url.query[1].key, 'check nationality param key').equals(\"nat\")\r",
 									"    pm.expect(frenchRequest.request.url.query[1].value, 'check nationality param value').to.be.oneOf([\"FR\", \"fr\"])\r",
-									"    \r",
+									"   \r",
 									"    pass += 1\r",
 									"})\r",
 									"\r",
@@ -263,7 +261,7 @@
 							}
 						}
 					],
-					"id": "0ab6073e-5dd2-4eb7-ac65-de670c4a7c46",
+					"id": "175e6173-4326-4bd0-86ce-1fa604ba357d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -294,7 +292,7 @@
 					"response": []
 				}
 			],
-			"id": "028a4236-d338-4316-825b-9d1ed365c42e",
+			"id": "32a06b1a-16bb-4bc4-bd18-4e48ce067660",
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
@@ -302,7 +300,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a70e51ee-e85f-4f0e-b2b2-104b5144260d",
+				"id": "e87d8dfb-87ad-4282-a502-ddfbc393656c",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -312,7 +310,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a0eb7eaa-88eb-4598-910d-4bc9a1e72fdd",
+				"id": "7085718c-f1c2-417e-a682-ec8b57e06870",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -322,7 +320,7 @@
 	],
 	"variable": [
 		{
-			"id": "cc4685fa-9522-4453-88a4-fba3ee025d00",
+			"id": "1bd01278-8f7a-4c76-bbf9-344443e43056",
 			"key": "collectionUid",
 			"value": "23721371-43bfb7cd-7e83-4fff-84be-bea8f8d5b31f",
 			"type": "string"

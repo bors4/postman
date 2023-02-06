@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "7cf0a08d-8731-491c-aec1-e5fdcf131eb7",
+		"_postman_id": "8a0a5b01-83f0-4de7-84c4-1d0b796bed2c",
 		"name": "Day 26: Parse HTML response",
 		"description": "## Instructions for Day 26: Parse HTML response\n\n1.  **Get the challenge:** Fork [the parent collection `Day 26: Parse HTML response`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-9f9419fe-5249-4b44-b07f-4cb3ef913c81) from the main workspace to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Variables](https://learning.postman.com/docs/sending-requests/variables/)\n*   [Scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n*   [Using external libraries](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries)\n*   [Writing tests](https://learning.postman.com/docs/writing-scripts/test-scripts/)\n    \n\n## Additional resources\n\n*   [Example](https://www.postman.com/postman/workspace/postman-answers/collection/9215231-cd114167-c5a1-495e-a50f-29d6dd5af4e0?ctx=documentation) in Postman Answers workspace\n*   [Check for Broken Links on Your Website Using a Postman Collection](https://blog.postman.com/check-for-broken-links-on-your-website-using-a-postman-collection/) blog\n*   [Parse HTML](https://www.tiktok.com/@joycejetson/video/7075694107703692590) tiktok\n    \n\n## Next challenge\n\n*   [Scenario testing](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-e9968036-7ad8-4daa-97c3-331184213392)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-7cf0a08d-8731-491c-aec1-e5fdcf131eb7"
+		"_uid": "23721371-8a0a5b01-83f0-4de7-84c4-1d0b796bed2c"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "83bee64e-5298-4ded-a2d4-0fefb3493ab2",
+								"id": "2b8c1f7a-6921-4958-aa9d-84e61d97aa51",
 								"exec": [
 									""
 								],
@@ -26,47 +26,26 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "34e20f5e-a946-4b65-bf94-b2777cfd84cf",
+								"id": "92f6a342-e1d8-4b88-89ff-2074316b5354",
 								"exec": [
-									"var cheerio = require('cheerio')\r",
-									"var links = []\r",
+									"const $ = cheerio.load(responseBody);\r",
+									"let links = $(\"li h2 a\").map(function() { return this.attribs.href}).get();\r",
+									"pm.collectionVariables.set(\"links\", JSON.stringify(links));\r",
 									"\r",
-									"const body = `<ol id=\"b_results\">\r",
-									"    <li class=\"b_algo\">\r",
-									"        <h2><a href=\"TEST\"></a></h2>\r",
-									"    </li>\r",
-									"     <li class=\"b_algo\">\r",
-									"        <h2><a href=\"TEST1\"></a></h2>\r",
-									"    </li>\r",
-									"    </ol>\r",
-									"`\r",
-									"\r",
-									"//$ = cheerio.load(body);\r",
-									"$ = cheerio.load(pm.response.text());\r",
-									"\r",
-									"$(\"body > #b_content > main > #b_results > li > h2\").find(\"a\").each(function(i, link) {\r",
-									"    //console.log($(link).attr(\"href\"))\r",
-									"    links = [...links, $(link).attr(\"href\")]\r",
-									"})\r",
-									"console.log(links)\r",
-									"\r",
-									"pm.collectionVariables.set(\"links\", links);\r",
 									"\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Collection variable is array\", function () {\r",
-									"    pm.expect(pm.collectionVariables.get(\"links\")).to.be.an('array')\r",
-									"})\r",
-									"\r",
-									""
+									"pm.test(\"Links collection variable is an array. \", function () {\r",
+									"    pm.expect(JSON.parse(pm.collectionVariables.get(\"links\"))).to.be.an(\"array\");\r",
+									"});"
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
-					"id": "f05bfee1-82a6-4199-b746-a387ac51f289",
+					"id": "16c7610a-07d1-4df1-bd08-0c029ccc2232",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -74,7 +53,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.bing.com/search?q=Download IE",
+							"raw": "https://www.bing.com/search?q=postman",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -87,7 +66,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "Download IE"
+									"value": "postman"
 								}
 							]
 						}
@@ -95,7 +74,7 @@
 					"response": []
 				}
 			],
-			"id": "d1aa9deb-1405-4252-a6bd-3c8b7248f4e3",
+			"id": "8d636264-d261-4aac-a8af-346e115c911c",
 			"description": "It's time to work on your next challenge.\n\n1. **Add a request**: Add a request called `bing` to the folder `Parse HTML response` with the following details:\n  - `GET` request method\n  - `https://www.bing.com/search` request URL\n  - Query parameter `q` with the value of any term, such as `postman`.\n\n  Hit **Send**, and look at the HTML response in Pretty, Raw, or Preview mode to ensure that you are receiving some search results.\n1. **Scrape web links**: Under the **Tests** tab, write a script using [the built-in library cheerio](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-external-libraries) to save all the links in the HTML response as an array. Try to only collect links that are displayed in the search results. And then store the array as a [collection variable](https://learning.postman.com/docs/sending-requests/variables/#variable-scopes) called `links`.\n\n  Hit **Send** to ensure your collection variable contains an array of links. Then [persist the collection variable](https://learning.postman.com/docs/sending-requests/variables/#sharing-and-persisting-data) so that the array is saved with the collection under `INITIAL VALUE` as well as `CURRENT VALUE`.\n1. **Add two tests**: Write a test to ensure a successful response status code from bing. Then write another test to validate the information being stored as a collection variable is formatted as an array. Send the request to make sure the tests pass appropriately, and save your changes. \n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation.",
 			"event": [
 				{
@@ -105,7 +84,7 @@
 						"exec": [
 							""
 						],
-						"id": "6a1f7f07-3753-4ad0-8ddb-579abb433413"
+						"id": "d3dece5d-0bbf-4ee1-9d1a-5467c4812d2c"
 					}
 				},
 				{
@@ -115,7 +94,7 @@
 						"exec": [
 							""
 						],
-						"id": "5490e7a7-7335-4d0d-90a5-cbb2fd24d6a1"
+						"id": "7a32f9bb-2ed1-4aab-b464-6348328f3867"
 					}
 				}
 			]
@@ -129,7 +108,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "06f7d094-a053-48fc-b1dd-334b7bccee8c",
+								"id": "a95b6abb-6e28-4d9b-a429-aa4747562268",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -169,13 +148,10 @@
 									"    let test = bingRequest.event.find(event => {return event.listen === \"test\"})\r",
 									"    pm.expect(test.listen, 'check test script').equals(\"test\")\r",
 									"    pm.expect(test.script.exec.toString(), 'check cheerio').to.include(\"cheerio.load\")\r",
-									"\t\r",
+									"\r",
 									"    let collVar = collection.variable.find(variable => { return variable.key === 'links'})\r",
-									"\tconsole.log(collVar.value)\r",
 									"    pm.expect(collVar.key, 'check collection variable set').to.equal('links')\r",
-									"    //value collection variable 'links' is not a JSON\r",
-									"\t//pm.expect(JSON.parse(collVar.value), 'check collection variable array').to.be.an('array')\r",
-									"\tpm.expect(collVar.value, 'check collection variable array').to.be.an('array')\r",
+									"    pm.expect(JSON.parse(collVar.value), 'check collection variable array').to.be.an('array')\r",
 									"\r",
 									"    pass += 1\r",
 									"})\r",
@@ -209,7 +185,7 @@
 							}
 						}
 					],
-					"id": "31ce8cc5-1390-48b2-b72d-8c83d95293e0",
+					"id": "af4e5057-13d7-406d-b0af-0a7a428c00a5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -240,7 +216,7 @@
 					"response": []
 				}
 			],
-			"id": "5ab38320-0ed6-45ee-89e7-6bcb7a825e85",
+			"id": "38e1e204-e491-48aa-a4f5-74d47e1dada8",
 			"description": "Follow the instructions in the request documentation."
 		}
 	],
@@ -248,7 +224,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f27cf9b5-59ac-4240-b480-75d42e1a9e96",
+				"id": "3e8d44b4-523c-4956-b4ef-1d56167cfc32",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -258,7 +234,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "38c8c390-8b3c-443a-a510-a41322eaebdc",
+				"id": "96ca36e6-d295-4240-98df-21708713189d",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -268,19 +244,12 @@
 	],
 	"variable": [
 		{
-			"id": "a8bec75a-4394-4807-9632-844f42ddc838",
+			"id": "acf80d04-209a-4a14-bdf1-bc0de6b8ee46",
 			"key": "links",
-			"value": [
-				"https://www.microsoft.com/en-us/download/details.aspx?id=41628",
-				"https://www.microsoft.com/en-us/download/internet-explorer.aspx",
-				"https://support.microsoft.com/en-us/windows/download-internet-explorer-11-offline-installer-99d492a1-3a62-077b-c476-cf028aff9a7f",
-				"https://support.microsoft.com/en-us/windows/internet-explorer-downloads-d49e1f0d-571c-9a7b-d97e-be248806ca70",
-				"https://learn.microsoft.com/en-us/troubleshoot/developer/browsers/installation/how-to-repair-or-reinstall-ie",
-				"https://www.partitionwizard.com/partitionmanager/internet-explorer-download.html"
-			]
+			"value": "[\"https://www.postman.com/\",\"/images/search?q=postman&qpvt=postman&FORM=IGRE\",\"https://app.getpostman.com/app/download/win64\",\"https://habr.com/ru/company/kolesa/blog/351250/\",\"https://blog.skillfactory.ru/glossary/postman/\",\"/videos/search?q=postman&qpvt=postman&FORM=VDRE\",\"https://en.wikipedia.org/wiki/Postman_(software)\",\"https://welovedevs.com/fr/articles/postman\",\"https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/use-postman-perform-operations\",\"https://ugo.tokyo/about-postman/\"]"
 		},
 		{
-			"id": "0e87a498-90df-4b88-96de-299a71707966",
+			"id": "ee0b01e5-f2db-45e6-b2d7-bb30c571a307",
 			"key": "collectionUid",
 			"value": "23721371-4a298b34-0197-4601-8ca5-9c202ec796aa",
 			"type": "string"

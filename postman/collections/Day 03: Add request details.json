@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "0eb9d6c4-5e05-4a00-b2f7-daa43b0c14ae",
+		"_postman_id": "7aab1f8a-bcef-460e-8efe-83a128e90094",
 		"name": "Day 03: Add request details",
 		"description": "## Instructions for Day 3: Add request details\n\n1.  **Get the challenge:** Fork [the parent collection `Day 03: Add request details`](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-969f4824-25ba-4ed6-8926-f71ce4ee079d) to your own public workspace.\n2.  **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation.\n3.  **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n*   [Sending body data](https://learning.postman.com/docs/sending-requests/requests/#sending-body-data)\n*   [Configuring request headers](https://learning.postman.com/docs/sending-requests/requests/#configuring-request-headers)\n    \n\n## Additional resources\n\n*   [Upload a File via POST Request](https://youtu.be/S7bwkys6D0E) video\n*   [API requests](https://www.tiktok.com/@joycejetson/video/7062401624437951791) tiktok\n    \n\n## Next challenge\n\n*   [Authorization](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-56245825-855e-4b97-ae54-b78441d511e4)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "23721371-0eb9d6c4-5e05-4a00-b2f7-daa43b0c14ae"
+		"_uid": "23721371-7aab1f8a-bcef-460e-8efe-83a128e90094"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 			"item": [
 				{
 					"name": "raw JSON body",
-					"id": "bdeae1c3-0374-45bf-8bc2-848531b008b2",
+					"id": "a382ff69-9913-48b3-bcce-0c8a2b0d7fa6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -41,7 +41,7 @@
 					"response": []
 				}
 			],
-			"id": "d3e856f8-9935-448f-a9cd-4a4daad6ee8e",
+			"id": "a0ecd6d2-61c0-4e84-9289-62d1058f2647",
 			"description": "It's time to work on your next challenge.\n\n1. **Add a request**: Add a request to the folder `Add request details` called `raw JSON body` with the following details:\n  - `POST` method\n  - <code>\\{{baseURL\\}}/post</code> request URL\n  - Select the environment you created in the previous challenge so that Postman reads in the appropriate value for <code>\\{{baseURL\\}}</code> in the request URL. \n1. **Include a body**: Under the **Body** tab, update the body type to `raw` and in the dropdown at the end where it says \"Text\", select `JSON`. Add a JSON object, like the following, and then make sure you get back a 200 status code when you hit **Send**. You can also view the results of the request to see the `json` element in the response has copied whatever JSON you added in the outgoing body. If the response says `\"json\": null,` then you might have done something incorrectly.\n```\n{\n\"data\": \"doodles\"\n}\n```\n  When you added a raw JSON request body, Postman auto-generated a header `Content-Type: application/json` header under the **Headers** tab. Take a look. You may need to click the **hidden** button to show the headers. This is also where you can [configure other request headers](https://learning.postman.com/docs/sending-requests/requests/#configuring-request-headers).\n1. **Review other request options**: There's a bunch of other ways to configure your requests, like updating the URL, method, and other optional values such as auth and parameters. Take a minute to learn more about [adding request details](https://learning.postman.com/docs/sending-requests/requests/#adding-request-detail). We'll dig deeper into some of these sections in later challenges too.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution. Follow the instructions in the request documentation."
 		},
 		{
@@ -53,7 +53,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9a916ce7-1fa4-436f-8519-1e9c495381f2",
+								"id": "ed6fde60-d22a-445b-8d0e-1ce39805e551",
 								"exec": [
 									"// counter for passed tests\r",
 									"let pass = 0\r",
@@ -117,7 +117,7 @@
 							}
 						}
 					],
-					"id": "431d93f4-f938-4606-9cb9-3530fe7ec175",
+					"id": "ae54bcb8-1fda-433e-bc1d-3588bcda46b1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -148,8 +148,38 @@
 					"response": []
 				}
 			],
-			"id": "7adea0f1-88d4-4ed6-961b-a93af8c59428",
+			"id": "83542f37-2dcf-4e08-ae61-84c4f035b833",
 			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f164ac50-a85c-4291-b588-57e335273a6e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f2efa244-8efe-409b-8840-424659d4704e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2015d5e2-2910-4f31-a209-bb435700d4cc",
+			"key": "collectionUid",
+			"value": "23721371-dfa48d08-56b3-48e5-bf38-3010dca13552",
+			"type": "string"
 		}
 	]
 }
